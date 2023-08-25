@@ -1,0 +1,39 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito"
+    />
+    <link rel="stylesheet" href="../../public/css/style.css" />
+    <title>Tech-Blog</title>
+  </head>
+
+  <body class="wrapper">
+    <!--Header ^_^ -->
+    <section class="hero">
+      <div class="hero-body">
+        <p class="title">Tech-Blog</p>
+        <!--Conditionally Render logout based on if logged in-->
+
+        {{#if logged_in}}
+          <button class="button new-post">New Post</button>
+          <button class="button login-button" id="logout">Logout</button>
+        {{/if}}
+      </div>
+    </section>
+    <!--Conditionally Render page based on if logged in-->
+    {{{body}}}
+
+    <footer></footer>
+  </body>
+</html>
+{{#if logged_in}}
+  <script src="../../public/js/logout.js">
+  </script>
+{{/if}}
